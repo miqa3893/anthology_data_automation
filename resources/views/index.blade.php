@@ -23,13 +23,13 @@
 
         <div class="container">
             <div class="row">
-                <div class="col text-center justify-content-center">
+                <div class="col-xs-12 col-sm col-md text-center justify-content-center">
                     <p id="lead_index" class="lead">{{ env('PROJECT_NAME') }}のデータを提出できます。</p>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col text-center justify-content-center">
+                <div class="col-xs-12 col-sm col-md text-center justify-content-center">
                     <p id="text_index">続行するにはTwitterでログインしてください。</p>
                     <a href="/oauth" class="btn btn-primary" role="button">Twitter ログイン</a>
                 </div>
