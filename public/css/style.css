@@ -1,0 +1,30 @@
+body { padding-top: 70px; }
+
+#text_index {
+    text-align: center;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background: #00acee; //ボタンの背景色
+    color: #ffffff; //ボタンのテキストの色
+}
+
+.btn-primary:hover, .btn-primary:focus,
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
+.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary,
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary:focus,
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
+    background: #008abe; //ボタンの上にポインタを持ってきたり、クリックしたりした時の背景色
+    color: #00acee; //ボタンの上にポインタを持ってきたり、クリックしたりした時のテキストの色
+}
+
+.btn-primary.outline {
+    border: 3px solid #00acee; //アウトラインのみのボタンの線の色
+    color: #00acee; //アウトラインのみのボタンのテキストの色
+}
