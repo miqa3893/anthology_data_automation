@@ -5,6 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-    OAuthControllerを用意する
+OAuthControllerを用意する
 </body>
 </html>
