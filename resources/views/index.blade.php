@@ -21,7 +21,7 @@
             <span class="navbar-text">合同誌ファイルちぇっかー</span>
         </nav>
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col text-center justify-content-center">
                     <p id="lead_index" class="lead">{{ env('PROJECT_NAME') }}のデータを提出できます。</p>
