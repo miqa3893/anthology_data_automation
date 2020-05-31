@@ -16,12 +16,19 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
-        <title>合同誌ファイルちぇっかー</title>
+        <title>合同誌ファイルちぇっかー アップロード</title>
     </head>
 
     <body>
-        <nav class="navbar fixed-top navbar-dark bg-dark">
-            <span class="navbar-text">合同誌ファイルちぇっかー</span>
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <span class="navbar-text">合同誌ファイルちぇっかー</span>
+    </nav>
+
+        <nav aria-label="パンくずリスト">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">提出データの入力</li>
+                <li class="breadcrumb-item active" aria-current="page">入力内容確認</li>
+            </ol>
         </nav>
 
         <div class="container">

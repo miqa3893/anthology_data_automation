@@ -21,4 +21,13 @@ Route::get('/oauth', function () {
     return view('oauth');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::post('/checkout', function () {
+    return view('checkout');
+});
+
+
 // Route::get('/oauth', '');
