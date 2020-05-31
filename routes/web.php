@@ -18,16 +18,16 @@ Route::get('/', function () {
 });
 
 Route::get('/oauth', function () {
-    return view('oauth');
-});
+    // return view('oauth');
+    return redirect('/home');
+})->name('oauth');
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/home', 'UploadController@input')->name('home');
+Route::patch('/confirm', 'UploadController@confirm')->name('confirm');
 
-Route::post('/checkout', function () {
-    return view('checkout');
-});
+Route::post('/complete', function () {
+    return view('complete');
+})->name('complete');
 
 
 // Route::get('/oauth', '');

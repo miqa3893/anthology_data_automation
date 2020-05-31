@@ -37,7 +37,7 @@
                 <div class="col"></div>
                 <div class="col-auto text-center justify-content-center">
                     <p id="text_index">続行するにはTwitterでログインしてください。</p>
-                    <a href="/oauth" class="btn btn-primary" role="button">Twitter ログイン</a>
+                    <a href="{{route('oauth')}}" class="btn btn-primary" role="button">Twitter ログイン</a>
                 </div>
                 <div class="col"></div>
             </div>
