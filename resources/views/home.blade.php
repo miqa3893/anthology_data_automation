@@ -54,27 +54,27 @@
                                 <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="meiko" name="characters[]" value="1" {{ is_array(old("characters")) && in_array("1", old("characters"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">MEIKO</label>
+                                    <label for="meiko" class="form-check-label">MEIKO</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="kaito" name="characters[]" value="2" {{ is_array(old("characters")) && in_array("2", old("characters"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">KAITO</label>
+                                    <label for="kaito" class="form-check-label">KAITO</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="miku" name="characters[]" value="4"  {{ is_array(old("characters")) && in_array("4", old("characters"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">初音ミク</label>
+                                    <label for="miku" class="form-check-label">初音ミク</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="rin" name="characters[]" value="8" {{ is_array(old("characters")) && in_array("8", old("characters"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">鏡音リン</label>
+                                    <label for="rin" class="form-check-label">鏡音リン</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="len" name="characters[]" value="16" {{ is_array(old("characters")) && in_array("16", old("characters"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">鏡音レン</label>
+                                    <label for="len" class="form-check-label">鏡音レン</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="luka" name="characters[]" value="32" {{ is_array(old("characters")) && in_array("32", old("characters"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">巡音ルカ</label>
+                                    <label for="luka" class="form-check-label">巡音ルカ</label>
                                 </div>
                                 @if($errors->has('characters'))
                                     <div class="text-danger">キャラクターが選択されていません。</div>
@@ -85,39 +85,39 @@
                                 <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2013" value="1" {{ is_array(old("years")) && in_array("1", old("years"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">2013</label>
+                                    <label for="mm2013" class="form-check-label">2013</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2014" value="2" {{ is_array(old("years")) && in_array("2", old("years"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">2014</label>
+                                    <label for="mm2014" class="form-check-label">2014</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2015" value="4" {{ is_array(old("years")) && in_array("4", old("years"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">2015</label>
+                                    <label for="mm2015" class="form-check-label">2015</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2016" value="8" {{ is_array(old("years")) && in_array("8", old("years"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">2016</label>
+                                    <label for="mm2016" class="form-check-label">2016</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2017" value="16" {{ is_array(old("years")) && in_array("16", old("years"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">2017</label>
+                                    <label for="mm2017"  class="form-check-label">2017</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2018" value="32" {{ is_array(old("years")) && in_array("32", old("years"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">2018</label>
+                                    <label for="mm2018" class="form-check-label">2018</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2019" value="64" {{ is_array(old("years")) && in_array("64", old("years"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">2019</label>
+                                    <label for="mm2019" class="form-check-label">2019</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2020s" value="128" {{ is_array(old("years")) && in_array("128", old("years"), true)? 'checked="checked"' : '' }}>
-                                    <label class="form-check-label">2020夏</label>
+                                    <label for="mm2020s" class="form-check-label">2020夏</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" name="years[]" id="mm2020w" value="256" disabled>
-                                    <label class="form-check-label">2020冬</label>
+                                    <label for="mm2020w" class="form-check-label">2020冬</label>
                                 </div>
                                 @if($errors->has('years'))
                                     <div class="text-danger">年度が選択されていません。</div>
