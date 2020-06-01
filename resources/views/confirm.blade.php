@@ -33,20 +33,34 @@
 
         <div class="container">
             <div class="row">
-                <div class="col"></div>
-                <div class="col-auto text-center justify-content-center">
-                    <p id="lead_index" class="lead">{{ env('PROJECT_NAME') }}のデータを提出できます。</p>
+                <div class="col-2"></div>
+                <div class="col-8 text-center justify-content-center">
+                    <p class="lead">以下の内容で提出します。よろしいですか？</p>
                 </div>
-                <div class="col"></div>
+                <div class="col-2"></div>
             </div>
 
+            <table class="table table-striped">
+                <tr><td>タイトル</td><td>{{$data["inputs"]["title"]}}</tr>
+                <tr><td>感想</td><td>{{$data["inputs"]["comment"]}}</tr>
+                <tr><td>使用キャラ</td><td>{{$data["inputs"]["characters"]}}</tr>
+                <tr><td>使用年度</td><td>{{$data["inputs"]["years"]}}</tr>
+                <tr><td>作品ファイル</td><td>{{$data["inputs"]["work"]}}</tr>
+                <tr><td>寄せ書きファイル</td><td>{{$data["inputs"]["graffito"]}}</tr>
+            </table>
+
             <div class="row">
-                <div class="col"></div>
-                <div class="col-auto text-center justify-content-center">
-                    <p id="text_index">続行するにはTwitterでログインしてください。</p>
-                    <a href="/oauth" class="btn btn-primary" role="button">Twitter ログイン</a>
+                <div class="col-2"></div>
+                <div class="col-8 text-center justify-content-center">
+                    <form action="#" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        @csrf
+{{--                        <input type="hidden" value="{{$data["raw"]}}">--}}
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary" value="提出">
+                        </div>
+                    </form>
                 </div>
-                <div class="col"></div>
+                <div class="col-2"></div>
             </div>
         </div>
 

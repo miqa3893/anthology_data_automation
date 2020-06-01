@@ -26,20 +26,20 @@
 
         <div class="container">
             <div class="row">
-                <div class="col"></div>
-                <div class="col-auto text-center justify-content-center">
+                <div class="col-2"></div>
+                <div class="col-8 text-center justify-content-center">
                     <p id="lead_index" class="lead">{{ env('PROJECT_NAME') }}のデータを提出できます。</p>
                 </div>
-                <div class="col"></div>
+                <div class="col-2"></div>
             </div>
 
             <div class="row">
-                <div class="col"></div>
-                <div class="col-auto text-center justify-content-center">
+                <div class="col-2"></div>
+                <div class="col--8 text-center justify-content-center">
                     <p id="text_index">続行するにはTwitterでログインしてください。</p>
                     <a href="{{route('oauth')}}" class="btn btn-primary" role="button">Twitter ログイン</a>
                 </div>
-                <div class="col"></div>
+                <div class="col-2"></div>
             </div>
         </div>
 

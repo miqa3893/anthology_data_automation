@@ -128,7 +128,7 @@
                                 <div class="input-group">
                                     <label class="input-group-btn">
                                     <span class="btn btn-secondary">
-                                        ファイル選択<input type="file" name="work" style="display:none" class="uploadFile">
+                                        ファイル選択<input type="file" name="work" style="display:none" class="uploadFile" accept=".png,.jpg,.jpeg">
                                     </span>
                                     </label>
                                     <input type="text" class="form-control" readonly="">
@@ -143,7 +143,7 @@
                                 <div class="input-group">
                                     <label class="input-group-btn">
                                     <span class="btn btn-secondary">
-                                        ファイル選択<input type="file" name="graffito" style="display:none" class="uploadFile">
+                                        ファイル選択<input type="file" name="graffito" style="display:none" class="uploadFile" accept=".png,.jpg,.jpeg">
                                     </span>
                                     </label>
                                     <input type="text" class="form-control" readonly="">
@@ -153,7 +153,7 @@
                                 @endif
                             </div> <!--寄せ書きー-->
                             <div class="text-center">
-                                <input type="submit" class="btn btn-primary" name="graffito" value="送信内容の確認">
+                                <input type="submit" class="btn btn-primary" value="送信内容の確認">
                             </div>
                         </form>
                     </div>
