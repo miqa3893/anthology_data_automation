@@ -41,16 +41,16 @@
             </div>
 
             <table class="table table-striped">
-                <tr><td>タイトル</td><td>{{$data["inputs"]["title"]}}</tr>
-                <tr><td>感想</td><td>{{$data["inputs"]["comment"]}}</tr>
-                <tr><td>使用キャラ</td><td>{{$data["inputs"]["characters"]}}</tr>
-                <tr><td>使用年度</td><td>{{$data["inputs"]["years"]}}</tr>
-                <tr><td>作品ファイル</td><td>{{$data["inputs"]["workName"]}}</tr>
-                <tr><td>アップロード画像</td><td><img src="/storage/public/temp_works/{{$data["inputs"]["workName"]}}" alt="アップロード作品ファイル"></tr>
-                <tr><td>寄せ書きファイル</td><td>{{$data["inputs"]["graffitoName"]}}</tr>
+                <tr><td>タイトル</td><td>{{$data["title"]}}</tr>
+                <tr><td>感想</td><td>{{$data["comment"]}}</tr>
+                <tr><td>使用キャラ</td><td>{{$data["characters"]}}</tr>
+                <tr><td>使用年度</td><td>{{$data["years"]}}</tr>
+                <tr><td>作品ファイル</td><td>{{$data["workName"]}}</tr>
+                <tr><td>アップロード画像</td><td><img src="/storage/public/temp_works/{{$data["workName"]}}" alt="アップロード作品ファイル"></tr>
+                <tr><td>寄せ書きファイル</td><td>{{$data["graffitoName"]}}</tr>
                 <tr><td>アップロード画像</td><td>
-                    @if($data["inputs"]["graffitoName"]!='データなし')
-                        <img src="/storage/public/temp_graffiti/{{$data["inputs"]["graffitoName"]}}" alt="アップロード寄せ書きファイル">
+                    @if($data["graffitoName"]!='データなし')
+                        <img src="/storage/public/temp_graffiti/{{$data["graffitoName"]}}" alt="アップロード寄せ書きファイル">
                     @endif
                 </tr>
             </table>
@@ -58,11 +58,14 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8 text-center justify-content-center">
-                    <form action="#" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <form action="{{route('complete')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                         @csrf
-{{--                        <input type="hidden" value="{{$data["raw"]}}">--}}
+                        <input type="hidden" value="{{$data["title"]}}">
+                        <input type="hidden" value="{{$data["comment"]}}">
+                        <input type="hidden" value="{{$data["charactersSum"]}}">
+                        <input type="hidden" value="{{$data["yearsSum"]}}">
                         <div class="text-center">
-                            <input type="submit" class="btn btn-primary" value="提出">
+                            <input type="submit" class="btn btn-primary" value="この内容で提出する！">
                         </div>
                     </form>
                 </div>

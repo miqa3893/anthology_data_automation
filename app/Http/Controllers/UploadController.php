@@ -16,10 +16,12 @@ class UploadController extends Controller
 
     // PATCH
     public function confirm(WorksUploadRequest $request){
-        //dd($request->all());
+
+        // 作品ファイルをローカルに保存
         $work = $request->file('work');
         $work->storeAs('public/temp_works/',$work->getClientOriginalName());
 
+        // 寄せ書きファイルがあったらローカルに保存
         if($request->has('graffito')){
             $graffito = $request->file('work');
             $graffitoName = $graffito->getClientOriginalName();
@@ -32,16 +34,22 @@ class UploadController extends Controller
             'title' => $request->get('title'),
             'comment' => $request->get('comment'),
             'characters' => DataConvertUtil::toCharacter($request->get('characters')),
+            'charactersSum' => $this->sumCode($request->get('characters')),
+            'yearsSum' => $this->sumCode($request->get('years')),
             'years' => DataConvertUtil::toYear($request->get('years')),
             'workName' => $request->file('work')->getClientOriginalName(),
             'graffitoName' => $graffitoName,
         );
 
-        $hash = array(
-            'inputs' => $inputData,
-            'raw' => $request->all(),
-        );
+        //dd($request->all());
+        return view('confirm')->with('data',$inputData);
+    }
 
-        return view('confirm')->with('data',$hash);
+    private function sumCode(array $codes){
+        $sum = 0;
+        foreach ($codes as $code){
+            $sum += $code;
+        }
+        return $sum;
     }
 }

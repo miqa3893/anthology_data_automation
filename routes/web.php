@@ -22,12 +22,14 @@ Route::get('/oauth', function () {
     return redirect('/home');
 })->name('oauth');
 
+// ログイン後提出フォーム
 Route::get('/home', 'UploadController@input')->name('home');
+
+// 提出データ確認
 Route::patch('/confirm', 'UploadController@confirm')->name('confirm');
 
-Route::post('/complete', function () {
-    return view('complete');
-})->name('complete');
+// 提出実行
+Route::post('/complete', 'SubmissionController@submitData')->name('complete');
 
 
 // Route::get('/oauth', '');
