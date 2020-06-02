@@ -50,7 +50,7 @@
                 <tr><td>寄せ書きファイル</td><td>{{$data["inputs"]["graffitoName"]}}</tr>
                 <tr><td>アップロード画像</td><td>
                     @if($data["inputs"]["graffitoName"]!='データなし')
-                        <img src="/storage/app/public/temp_graffiti/{{$data["inputs"]["graffitoName"]}}" alt="アップロード寄せ書きファイル">
+                        <img src="/storage/public/temp_graffiti/{{$data["inputs"]["graffitoName"]}}" alt="アップロード寄せ書きファイル">
                     @endif
                 </tr>
             </table>
