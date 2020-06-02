@@ -16,12 +16,12 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
-        <title>合同誌ファイルちぇっかー アップロード</title>
+        <title>{{env('APP_NAME')}}</title>
     </head>
 
     <body>
     <nav class="navbar fixed-top navbar-dark bg-dark">
-        <span class="navbar-text">合同誌ファイルちぇっかー</span>
+        <span class="navbar-text">{{env('APP_NAME')}}</span>
     </nav>
 
         <nav aria-label="パンくずリスト">

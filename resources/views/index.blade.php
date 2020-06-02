@@ -16,12 +16,12 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
-        <title>合同誌ファイルちぇっかー</title>
+        <title>{{env('APP_NAME')}}</title>
     </head>
 
     <body>
         <nav class="navbar fixed-top navbar-dark bg-dark">
-            <span class="navbar-text">合同誌ファイルちぇっかー</span>
+            <span class="navbar-text">{{env('APP_NAME')}}</span>
         </nav>
 
         <div class="container">
@@ -37,7 +37,7 @@
                 <div class="col-2"></div>
                 <div class="col-8 text-center justify-content-center">
                     <p id="text_index">続行するにはTwitterでログインしてください。</p>
-                    <a href="{{route('oauth')}}" class="btn btn-primary" role="button">Twitter ログイン</a>
+                    <a href="{{route('login')}}" class="btn btn-primary" role="button">Twitter ログイン</a>
                 </div>
                 <div class="col-2"></div>
             </div>
