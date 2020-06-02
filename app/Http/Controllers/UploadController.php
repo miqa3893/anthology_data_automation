@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\WorksUploadRequest;
+use Auth;
 use Illuminate\Http\Request;
 use App\Util\DataConvertUtil;
 
@@ -11,11 +12,20 @@ class UploadController extends Controller
 
     // GET
     public function input(){
-        return view('home');
+
+        //ログインしていなかったらindexにリダイレクト
+        if(Auth::check()){
+            return view('home');
+        }else{
+            return redirect()->route('index');
+        }
     }
 
     // PATCH
     public function confirm(WorksUploadRequest $request){
+        if(!Auth::check()){
+            return redirect()->route('index');
+        }
 
         // 作品ファイルをローカルに保存
         $work = $request->file('work');
