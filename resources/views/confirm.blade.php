@@ -45,8 +45,14 @@
                 <tr><td>感想</td><td>{{$data["inputs"]["comment"]}}</tr>
                 <tr><td>使用キャラ</td><td>{{$data["inputs"]["characters"]}}</tr>
                 <tr><td>使用年度</td><td>{{$data["inputs"]["years"]}}</tr>
-                <tr><td>作品ファイル</td><td>{{$data["inputs"]["work"]}}</tr>
-                <tr><td>寄せ書きファイル</td><td>{{$data["inputs"]["graffito"]}}</tr>
+                <tr><td>作品ファイル</td><td>{{$data["inputs"]["workName"]}}</tr>
+                <tr><td>アップロード画像</td><td><img src="/storage/public/temp_works/{{$data["inputs"]["workName"]}}" alt="アップロード作品ファイル"></tr>
+                <tr><td>寄せ書きファイル</td><td>{{$data["inputs"]["graffitoName"]}}</tr>
+                <tr><td>アップロード画像</td><td>
+                    @if($data["inputs"]["graffitoName"]!='データなし')
+                        <img src="/storage/app/public/temp_graffiti/{{$data["inputs"]["graffitoName"]}}" alt="アップロード寄せ書きファイル">
+                    @endif
+                </tr>
             </table>
 
             <div class="row">

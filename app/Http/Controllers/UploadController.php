@@ -17,10 +17,15 @@ class UploadController extends Controller
     // PATCH
     public function confirm(WorksUploadRequest $request){
         //dd($request->all());
+        $work = $request->file('work');
+        $work->storeAs('public/temp_works/',$work->getClientOriginalName());
+
         if($request->has('graffito')){
-            $graffito = $request->file('graffito')->getClientOriginalName();
+            $graffito = $request->file('work');
+            $graffitoName = $graffito->getClientOriginalName();
+            $graffito->storeAs('public/temp_graffiti/',$graffitoName);
         }else{
-            $graffito = 'データなし';
+            $graffitoName = 'データなし';
         }
 
         $inputData = array(
@@ -28,8 +33,8 @@ class UploadController extends Controller
             'comment' => $request->get('comment'),
             'characters' => DataConvertUtil::toCharacter($request->get('characters')),
             'years' => DataConvertUtil::toYear($request->get('years')),
-            'work' => $request->file('work')->getClientOriginalName(),
-            'graffito' => $graffito,
+            'workName' => $request->file('work')->getClientOriginalName(),
+            'graffitoName' => $graffitoName,
         );
 
         $hash = array(
