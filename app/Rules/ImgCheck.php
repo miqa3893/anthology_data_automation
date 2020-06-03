@@ -5,7 +5,7 @@ namespace App\Rules;
 use Config;
 use Illuminate\Contracts\Validation\Rule;
 
-class ImgHeight implements Rule
+class ImgCheck implements Rule
 {
     /**
      * Create a new rule instance.
@@ -26,12 +26,6 @@ class ImgHeight implements Rule
      */
     public function passes($attribute, $value)
     {
-        $height = imagesy($value);
-        $heightRule = Config::get('utils.imageRule.height');
-
-        //高さが既定値より大きいまたは小さい
-        if($height<($heightRule-20)||$height>($heightRule+20)) return false;
-
         return true;
     }
 

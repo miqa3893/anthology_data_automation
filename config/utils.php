@@ -9,10 +9,10 @@ return [
     /**
      * 合同誌企画で規定するファイルの幅と高さ（px）
      */
-    'imageRules' => [
-        'height' => '3624',
-        'width' => '2591',
-    ],
+    'minHeight' => '3614',
+    'maxHeight' => '3634',
+    'minWidth' => '2581',
+    'maxWidth' => '2601',
 
     /**
      * 合同誌企画で規定するファイルの解像度（dpi）

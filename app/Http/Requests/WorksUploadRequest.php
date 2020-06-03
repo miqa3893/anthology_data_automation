@@ -3,9 +3,10 @@
 namespace App\Http\Requests;
 
 use App\Rules\ImgDpi;
-use App\Rules\ImgHeight;
+use App\Rules\ImgCheck;
 use App\Rules\ImgWidth;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Config;
 
 class WorksUploadRequest extends FormRequest
 {
@@ -31,7 +32,9 @@ class WorksUploadRequest extends FormRequest
             'comment' => ['required','max:256'],    //感想
             'characters' => 'required',         //キャラクター
             'years' => 'required',              //年度
-            'work' => ['required','mimes:jpeg,jpg,png',new ImgHeight(), new ImgWidth() , new ImgDpi()],              //作品
+            'work' => ['required',
+                'mimes:jpeg,jpg,png',
+                'dimensions:min_width='.Config::get('utils.minWidth').',min_height='.Config::get('utils.minHeight').',max_width='.Config::get('utils.maxWidth').',max_height='.config::get('utils.maxHeight')],              //作品
             'graffito' => 'mimes:jpeg,jpg,png'                          //寄せ書き
         ];
     }
@@ -47,6 +50,7 @@ class WorksUploadRequest extends FormRequest
             'years' => '使用した年度を1つ以上選択してください。',              //年度
             'work.required' => '作品ファイルが選択されていません。',                //作品
             'work.mimes' => 'アップロードできるファイルは「jpg」「png」のみです。',
+            'work.dimensions' => 'アップロードできるサイズが異なります。',
             'graffito.mimes' => 'アップロードできるファイルは「jpg」「png」のみです。' //寄せ書き
         ];
     }
