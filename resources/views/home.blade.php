@@ -34,6 +34,7 @@
             <div class="row">
                 <div class="col-2"></div>
                     <div class="col-8">
+                        <p class="lead">こんにちは、{{ $_GET['twitterName'] }}さん！</p>
                         <p class="lead">提出する作品の情報を入力してください。</p>
                         <br>
                         <form action="{{route('confirm')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -134,7 +135,7 @@
                                     </label>
                                     <input type="text" class="form-control" readonly="" value="png,jpgファイルのいずれかを選択">
                                 </div> <!--作品ファイルアップロードー-->
-                                <small class="text-muted">幅：2591 ± 10px,高さ：3624 ± 10px のデータが提出できます。</small>
+                                <small class="text-muted">幅：2591 ± 20px,高さ：3624 ± 20px のデータが提出できます。</small>
                                 @if($errors->has('work'))
                                     <div class="text-danger">{{ $errors->first('work') }}</div>
                                 @endif

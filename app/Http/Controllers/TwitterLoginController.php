@@ -15,7 +15,7 @@ class TwitterLoginController extends Controller
         return Socialite::driver('twitter')->redirect();
     }
 
-    public function authCallback(Request $request){
+    public function authCallback(){
         try{
             $user = Socialite::driver('twitter')->user();
         }catch (Exception $e){
@@ -30,7 +30,9 @@ class TwitterLoginController extends Controller
 
         Auth::login($authUser,true);
 
-        return redirect()->route('home');
+        $data = array('twitterName' => $authUser->twitter_name);
+
+        return redirect()->route('home',$data);
     }
 
     public function findUser($twitterUser){
