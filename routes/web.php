@@ -15,10 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
-Route::get('/oauth', function () {
-    return view('oauth');
-});
+// Twitter API 認証
+Route::get('oauth/login', 'TwitterLoginController@getAuth')->name('login');
 
-// Route::get('/oauth', '');
+// Twitter API 認証後コールバック
+Route::get('oauth/callback', 'TwitterLoginController@authCallback')->name('auth');
+
+// ログイン後提出フォーム
+Route::get('/home', 'UploadController@input')->name('home');
+
+// 提出データ確認
+Route::patch('/confirm', 'UploadController@confirm')->name('confirm');
+
+// 提出実行
+Route::post('/complete', 'SubmissionController@submitData')->name('complete');
