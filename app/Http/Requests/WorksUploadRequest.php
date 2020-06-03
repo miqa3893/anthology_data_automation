@@ -2,6 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\ImgDpi;
+use App\Rules\ImgHeight;
+use App\Rules\ImgWidth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class WorksUploadRequest extends FormRequest
@@ -28,7 +31,7 @@ class WorksUploadRequest extends FormRequest
             'comment' => ['required','max:256'],    //感想
             'characters' => 'required',         //キャラクター
             'years' => 'required',              //年度
-            'work' => ['required','mimes:jpeg,jpg,png'],              //作品
+            'work' => ['required','mimes:jpeg,jpg,png',new ImgHeight(), new ImgWidth() , new ImgDpi()],              //作品
             'graffito' => 'mimes:jpeg,jpg,png'                          //寄せ書き
         ];
     }

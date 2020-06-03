@@ -16,7 +16,6 @@ class TwitterLoginController extends Controller
     }
 
     public function authCallback(Request $request){
-        //dd($request);
         try{
             $user = Socialite::driver('twitter')->user();
         }catch (Exception $e){
