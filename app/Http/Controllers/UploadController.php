@@ -48,6 +48,8 @@ class UploadController extends Controller
             'yearsSum' => $this->sumCode($request->get('years')),
             'years' => DataConvertUtil::toYear($request->get('years')),
             'workName' => $request->file('work')->getClientOriginalName(),
+            'sellEnabled' => $request->get('sellEnabled')==1 ? "はい" : "いいえ",
+            'sellEnabledValue' => $request->get('sellEnabled'),
             'graffitoName' => $graffitoName,
         );
 

@@ -53,6 +53,7 @@
                         <img src="/storage/public/temp_graffiti/{{$data["graffitoName"]}}" alt="アップロード寄せ書きファイル">
                     @endif
                 </tr>
+                <tr><td>グッズ化の可否</td><td>{{$data["sellEnabled"]}}</tr>
             </table>
 
             <div class="row">
@@ -64,8 +65,9 @@
                         <input type="hidden" name="comment" value="{{$data["comment"]}}">
                         <input type="hidden" name="character" value="{{$data["charactersSum"]}}">
                         <input type="hidden" name="year" value="{{$data["yearsSum"]}}">
-                        <div class="text-center">
-                            <input type="submit" class="btn btn-primary" value="この内容で提出する！">
+                        <input type="hidden" name="sellEnabled" value="{{$data["sellEnabledValue"]}}">
+                        <div class="text-center mt-4 mb-5">
+                            <input type="submit" class="btn btn-primary btn-lg" value="この内容で提出する！">
                         </div>
                     </form>
                 </div>

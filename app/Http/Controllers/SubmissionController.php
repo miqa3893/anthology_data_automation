@@ -6,6 +6,7 @@ use App\Status;
 use App\User;
 use Auth;
 use Config;
+use Exception;
 use Illuminate\Http\Request;
 use App\Util\DataConvertUtil;
 
@@ -27,14 +28,21 @@ class SubmissionController extends Controller
             $character = 0;
         }
 
+        // ユーザ情報を取得
         $user = User::where('id','=',Auth::id())->first();
-        dd($user);
 
-        //Insertするデータを作成
+        // Statuses（提出状況）にInsertするデータを作成
         $status = new Status();
-        $status->create(array(
-            'twitter_id' => $user->twitter_id,
-        ));
+        try{
+            $status->create(array(
+                'twitter_id' => $user->twitter_id,
+                'submit_status' => '1',
+                'selling_enabled' => $request->get('sellEnabledValue')
+            ));
+        }catch(Exception $exception){
+            Log::error("Statusesデータベース書き込みエラー　Twitter ID：".$user->twitter_id."\tHN：".$user->twitter_name);
+            return view('invalid')->with('msg',"内部的システムエラーが発生しました。");
+        }
 
 
         return view('complete');
