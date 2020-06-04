@@ -35,11 +35,17 @@ class SubmissionController extends Controller
             $character = 0;
         }
 
-        $workImage = Storage::disk('local')->get('/temp_works/'.$request->get('workFileName'));
-        $graffitoImage = Storage::disk('local')->get('/temp_graffiti/'.$request->get('graffitoFileName'));
-        dd($graffitoImage);
+        // ローカルからデータファイルを読み出す
+        $workImage = Storage::get('/public/temp_works/'.$request->get('workFileName'));
+        $graffitoImage = Storage::get('/public/temp_graffiti/'.$request->get('graffitoFileName'));
 
         //todo: S3に保存する
+        $projectPath = Config::get('utils.s3Folder');
+
+        $workPath = Storage::disk('s3')->put($projectPath.'_works',$workImage);
+        $graffitoPath = Storage::disk('s3')->put($projectPath.'_graffiti',$graffitoImage);
+
+        dd($workPath,$graffitoPath);
         //todo: S3に保存したパスを取得する
 
         // ユーザ情報を取得
