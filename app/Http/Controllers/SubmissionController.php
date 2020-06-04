@@ -11,6 +11,7 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Util\DataConvertUtil;
 use Log;
+use Storage;
 
 class SubmissionController extends Controller
 {
@@ -33,6 +34,10 @@ class SubmissionController extends Controller
         if($character == DataConvertUtil::ALL_CHARACTER_SUM){
             $character = 0;
         }
+
+        $workImage = Storage::disk('local')->get('/temp_works/'.$request->get('workFileName'));
+        $graffitoImage = Storage::disk('local')->get('/temp_graffiti/'.$request->get('graffitoFileName'));
+        dd($graffitoImage);
 
         //todo: S3に保存する
         //todo: S3に保存したパスを取得する
