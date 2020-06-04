@@ -58,17 +58,18 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8 text-center justify-content-center">
-                    <form action="{{route('complete')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <form action="{{route('complete')}}" method="post" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" value="{{$data["title"]}}">
-                        <input type="hidden" value="{{$data["comment"]}}">
-                        <input type="hidden" value="{{$data["charactersSum"]}}">
-                        <input type="hidden" value="{{$data["yearsSum"]}}">
+                        <input type="hidden" name="title" value="{{$data["title"]}}">
+                        <input type="hidden" name="comment" value="{{$data["comment"]}}">
+                        <input type="hidden" name="character" value="{{$data["charactersSum"]}}">
+                        <input type="hidden" name="year" value="{{$data["yearsSum"]}}">
                         <div class="text-center">
                             <input type="submit" class="btn btn-primary" value="この内容で提出する！">
                         </div>
                     </form>
                 </div>
+                <br>
                 <div class="col-2"></div>
             </div>
         </div>

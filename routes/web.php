@@ -30,4 +30,4 @@ Route::get('/home', 'UploadController@input')->name('home');
 Route::patch('/confirm', 'UploadController@confirm')->name('confirm');
 
 // 提出実行
-Route::post('/complete', 'SubmissionController@submitData')->name('complete');
+Route::post('/complete', 'SubmissionController@submit')->name('complete');

@@ -51,7 +51,6 @@ class UploadController extends Controller
             'graffitoName' => $graffitoName,
         );
 
-        //dd($request->all());
         return view('confirm')->with('data',$inputData);
     }
 

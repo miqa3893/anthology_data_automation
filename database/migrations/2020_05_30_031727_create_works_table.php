@@ -14,7 +14,7 @@ class CreateWorksTable extends Migration
     public function up()
     {
         Schema::create('works', function (Blueprint $table) {
-            $table->string('user_id');
+            $table->string('twitter_id');
             $table->integer('work_no');
             $table->string('work_pass',256);
             $table->string('work_title',64);

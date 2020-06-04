@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class TwitterLoginController extends Controller
 {
     public function getAuth(){
+        if(Auth::check()) Auth::logout();
         return Socialite::driver('twitter')->redirect();
     }
 
