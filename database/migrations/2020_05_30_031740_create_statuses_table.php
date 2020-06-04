@@ -14,7 +14,7 @@ class CreateStatusesTable extends Migration
     public function up()
     {
         Schema::create('statuses', function (Blueprint $table) {
-            $table->string('user_id');
+            $table->string('twitter_id');
             $table->string('submit_status');
             $table->boolean('selling_enabled');
             $table->timestamps();

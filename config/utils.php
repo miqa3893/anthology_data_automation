@@ -18,4 +18,10 @@ return [
      * 合同誌企画で規定するファイルの解像度（dpi）
      */
     'dpi' => 350,
+
+    /**
+     *  現在のマジカルミライの最新年度コード
+     *  cf: https://docs.google.com/document/d/17rUled0Hddvcado4DCmctYY4qjuKfrICHCCnAcY3tvA/edit?usp=sharing
+     */
+    'allYearSumCode' => 255,
 ];

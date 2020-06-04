@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-2"></div>
                     <div class="col-8">
-                        <p class="lead">こんにちは、{{ $_GET['twitterName'] }}さん！</p>
+                        <p class="lead">こんにちは、{{ Auth::user()->twitter_name }}さん！</p>
                         <p class="lead">提出する作品の情報を入力してください。</p>
                         <br>
                         <form action="{{route('confirm')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -155,8 +155,15 @@
                                     <div class="text-danger">{{ $errors->first('graffito') }}</div>
                                 @endif
                             </div> <!--寄せ書きー-->
-                            <div class="text-center">
-                                <input type="submit" class="btn btn-primary" value="送信内容の確認">
+                            <div class="form-group">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="sellEnabled" id="sellEnabled" value="1">
+                                    <label for="sellEnabled" class="form-check-label">別途グッズを頒布することになった場合、わたしの作品はグッズ制作に使用しても良い。</label>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4 mb-5">
+                                <input type="submit" class="btn btn-primary btn-lg" value="送信内容の確認">
                             </div>
                         </form>
                     </div>

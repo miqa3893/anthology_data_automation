@@ -15,7 +15,7 @@ class CreateGraffitiTable extends Migration
     {
         Schema::create('graffiti', function (Blueprint $table) {
             // graffitiって複数形なんだね！
-            $table->string('user_id');
+            $table->string('twitter_id');
             $table->integer('graffito_no');
             $table->string('graffito_pass',256);
             $table->timestamps();

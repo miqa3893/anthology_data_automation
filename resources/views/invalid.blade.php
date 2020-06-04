@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8 text-center justify-content-center">
-                    <p id="lead_index" class="lead">ログインに失敗しました。合同誌の参加者ではないか、参加表明時からTwitterIDが変更されている可能性があります。<br>システム管理者までご連絡ください。</p>
+                    <p id="lead_index" class="lead">{{$msg}}<br>システム管理者までご連絡ください。</p>
                 </div>
                 <div class="col-2"></div>
             </div>

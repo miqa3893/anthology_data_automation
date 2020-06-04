@@ -12,6 +12,27 @@
 
 namespace App{
 /**
+ * App\Status
+ *
+ * @property int $twitter_id
+ * @property string $submit_status
+ * @property int|null $selling_enabled
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Status newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Status newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Status query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Status whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Status whereSellingEnabled($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Status whereSubmitStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Status whereTwitterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Status whereUpdatedAt($value)
+ */
+	class Status extends \Eloquent {}
+}
+
+namespace App{
+/**
  * App\User
  *
  * @property int $twitter_id
@@ -41,5 +62,36 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
  */
 	class User extends \Eloquent {}
+}
+
+namespace App{
+/**
+ * App\Work
+ *
+ * @property int $twitter_id
+ * @property int $work_no
+ * @property string $work_path
+ * @property string $work_title
+ * @property string $comment
+ * @property int $character_code
+ * @property int $year_code
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereCharacterCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereComment($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereTwitterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereWorkNo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereWorkPath($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereWorkTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Work whereYearCode($value)
+ */
+	class Work extends \Eloquent {}
 }
 
