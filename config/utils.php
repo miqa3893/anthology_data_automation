@@ -23,5 +23,5 @@ return [
      *  現在のマジカルミライの最新年度コード
      *  cf: https://docs.google.com/document/d/17rUled0Hddvcado4DCmctYY4qjuKfrICHCCnAcY3tvA/edit?usp=sharing
      */
-    'allYearSumCode' => 256,
+    'allYearSumCode' => 255,
 ];

@@ -16,7 +16,7 @@ class CreateWorksTable extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->string('twitter_id');
             $table->integer('work_no');
-            $table->string('work_pass',256);
+            $table->string('work_path',1024);
             $table->string('work_title',64);
             $table->string('comment',512);
             $table->integer('character_code');

@@ -9,7 +9,7 @@ class DataConvertUtil
     /**
      * 全キャラコードを足し合わせた固定値
      */
-    public const ALL_CHARACTER_SUM = 64;
+    public const ALL_CHARACTER_SUM = 63;
 
     private static $integerToCharacterArray = [
         '1' => 'MEIKO',
