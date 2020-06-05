@@ -42,10 +42,13 @@ class SubmissionController extends Controller
         //todo: S3に保存する
         $projectPath = Config::get('utils.s3Folder');
 
-        $workPath = Storage::disk('s3')->put($projectPath.'_works',$workImage);
-        $graffitoPath = Storage::disk('s3')->put($projectPath.'_graffiti',$graffitoImage);
+//        Storage::disk('s3')->put($projectPath.'_works',$workImage);
+//        Storage::disk('s3')->put($projectPath.'_graffiti',$graffitoImage);
 
-        dd($workPath,$graffitoPath);
+        Storage::disk('s3')->put($projectPath.'_works/'.$request->get('workFileName'),$workImage,'public');
+        Storage::disk('s3')->put($projectPath.'_graffiti/'.$request->get('graffitoFileName'),$graffitoImage,'public');
+
+
         //todo: S3に保存したパスを取得する
 
         // ユーザ情報を取得
