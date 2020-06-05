@@ -61,6 +61,8 @@
                 <div class="col-8 text-center justify-content-center">
                     <form action="{{route('complete')}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="workFileName" value="{{$data["workFileName"]}}">
+                        <input type="hidden" name="graffitoFileName" value="{{$data["graffitoFileName"]}}">
                         <input type="hidden" name="title" value="{{$data["title"]}}">
                         <input type="hidden" name="comment" value="{{$data["comment"]}}">
                         <input type="hidden" name="character" value="{{$data["charactersSum"]}}">

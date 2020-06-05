@@ -33,7 +33,7 @@ class UploadController extends Controller
 
         // 寄せ書きファイルがあったらローカルに保存
         if($request->has('graffito')){
-            $graffito = $request->file('work');
+            $graffito = $request->file('graffito');
             $graffitoName = $graffito->getClientOriginalName();
             $graffito->storeAs('public/temp_graffiti/',$graffitoName);
         }else{
@@ -41,6 +41,8 @@ class UploadController extends Controller
         }
 
         $inputData = array(
+            'workFileName' => $work->getClientOriginalName(),
+            'graffitoFileName' => $graffitoName,
             'title' => $request->get('title'),
             'comment' => $request->get('comment'),
             'characters' => DataConvertUtil::toCharacter($request->get('characters')),

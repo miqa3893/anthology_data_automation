@@ -7,6 +7,17 @@ return [
     'project_name' => env('PROJECT_NAME',"合同誌企画"),
 
     /**
+     * S3に保存するフォルダ名
+     * [project]_(works|graffiti)
+     * ex：
+     * creation_our_miraies_2_works
+     * creation_our_miraies_2_graffiti
+     */
+    's3Folder' => env('AWS_STORE_FOLDER',''),
+
+    'storeFolder' => '/storage/public',
+
+    /**
      * 合同誌企画で規定するファイルの幅と高さ（px）
      */
     'minHeight' => '3604',

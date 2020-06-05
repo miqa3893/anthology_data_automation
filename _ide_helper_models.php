@@ -12,11 +12,34 @@
 
 namespace App{
 /**
+ * App\Graffito
+ *
+ * @property int $twitter_id
+ * @property int $graffito_no
+ * @property string $graffito_pass
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito whereGraffitoNo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito whereGraffitoPass($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito whereTwitterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Graffito whereUpdatedAt($value)
+ */
+	class Graffito extends \Eloquent {}
+}
+
+namespace App{
+/**
  * App\Status
  *
  * @property int $twitter_id
  * @property string $submit_status
- * @property int|null $selling_enabled
+ * @property int $selling_enabled
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Status newModelQuery()
@@ -35,7 +58,8 @@ namespace App{
 /**
  * App\User
  *
- * @property int $twitter_id
+ * @property int $id
+ * @property string $twitter_id
  * @property string $twitter_name
  * @property string|null $name
  * @property string|null $email
@@ -54,6 +78,7 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereEmailVerifiedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
@@ -70,7 +95,7 @@ namespace App{
  *
  * @property int $twitter_id
  * @property int $work_no
- * @property string $work_path
+ * @property string|null $work_path
  * @property string $work_title
  * @property string $comment
  * @property int $character_code
