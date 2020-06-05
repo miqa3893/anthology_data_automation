@@ -133,7 +133,7 @@
                                         ファイル選択<input type="file" name="work" style="display:none" class="uploadFile" accept=".png,.jpg,.jpeg">
                                     </span>
                                     </label>
-                                    <input type="text" class="form-control" readonly="" value="png,jpgファイルのいずれかを選択">
+                                    <input type="text" class="form-control" readonly="" value="『PNG』『JPG』ファイルのいずれかを選択">
                                 </div> <!--作品ファイルアップロードー-->
                                 <small class="text-muted">幅：2591 ± 20px,高さ：3624 ± 20px のデータが提出できます。</small>
                                 @if($errors->has('work'))
