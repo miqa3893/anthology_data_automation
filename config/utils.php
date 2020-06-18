@@ -6,6 +6,8 @@ return [
      */
     'project_name' => env('PROJECT_NAME',"合同誌企画"),
 
+    'iftttUri' => env('IFTTT_API_URL',"https://maker.ifttt.com/trigger/new_data_posted/with/key/gOPzXgSTLAnmAuByGoWOoTqEg7FeFyC6J9dMskBUu-T"),
+
     /**
      * S3に保存するフォルダ名
      * [project]_(works|graffiti)
