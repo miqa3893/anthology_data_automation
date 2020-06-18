@@ -9,6 +9,7 @@ use App\Work;
 use Auth;
 use Config;
 use Exception;
+use Http;
 use Illuminate\Http\Request;
 use App\Util\DataConvertUtil;
 use Log;
@@ -99,6 +100,14 @@ class SubmissionController extends Controller
                 return view('invalid')->with('msg',"内部的システムエラーが発生しました。");
             }
         }
+
+        //IFTTTのWebhookを叩く
+        $response = Http::post(env('IFTTT_API_URL'),array(
+            'value1' => $user->twitter_id,
+            'value2' => $user->twitter_name,
+            'value3' => $workPath
+        ));
+
 
         return view('complete');
     }
