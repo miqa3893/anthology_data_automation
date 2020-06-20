@@ -39,8 +39,9 @@ class TwitterLoginController extends Controller
 
         $data = array('twitterName' => $authUser->twitter_name);
 
-        return redirect()->route('home',$data);
+        return redirect()->route('submit');
     }
+
 
     public function findUser($twitterUser){
 
@@ -69,10 +70,15 @@ class TwitterLoginController extends Controller
         return false;
     }
 
+    /**
+     * システムからログアウトします
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logout(){
         Auth::logout();
         return redirect()->route('index');
     }
+
 
     public function __construct(){
         $this->middleware('guest')->except('logout');

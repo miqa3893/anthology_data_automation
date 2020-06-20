@@ -4,18 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\WorksUploadRequest;
 use Auth;
-use Illuminate\Http\Request;
 use App\Util\DataConvertUtil;
 
 class UploadController extends Controller
 {
 
     // GET
-    public function input(){
-
+    public function index(){
         //ログインしていなかったらindexにリダイレクト
         if(Auth::check()){
-            return view('home');
+            return view('submit');
         }else{
             return redirect()->route('index');
         }

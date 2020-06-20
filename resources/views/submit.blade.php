@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
+@extends('layout')
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-
-        <title>{{env('APP_NAME')}}</title>
-    </head>
-
-    <body>
-    <nav class="navbar fixed-top navbar-dark bg-dark">
-        <span class="navbar-text">{{env('APP_NAME')}}</span>
-    </nav>
-
+@section('contents')
         <nav aria-label="パンくずリスト">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">提出データの入力</li>
@@ -34,7 +11,6 @@
             <div class="row">
                 <div class="col-2"></div>
                     <div class="col-8">
-                        <p class="lead">こんにちは、{{ Auth::user()->twitter_name }}さん！</p>
                         <p class="lead">提出する作品の情報を入力してください。</p>
                         <br>
                         <form action="{{route('confirm')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -181,5 +157,4 @@
                 input.parent().parent().next(':text').val(label);
             });
         </script>
-    </body>
-</html>
+@endsection
