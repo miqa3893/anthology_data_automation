@@ -30,6 +30,7 @@ class TwitterLoginController extends Controller
             return view('invalid')->with('msg',"ログインに失敗しました。合同誌の参加者ではないか、参加表明時からTwitterIDが変更されている可能性があります。");
         }
 
+        // todo: ver 2.0.0 アップデート対応
         //すでにworksテーブルにデータがある（提出済み）のユーザは弾く
         if($this->existsWork($authUser)){
             return view('invalid')->with('msg',"すでにデータが提出されている可能性があります。");
@@ -37,9 +38,7 @@ class TwitterLoginController extends Controller
 
         Auth::login($authUser,true);
 
-        $data = array('twitterName' => $authUser->twitter_name);
-
-        return redirect()->route('submit');
+        return redirect()->route('users.index');
     }
 
 

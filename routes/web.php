@@ -25,6 +25,9 @@ Route::get('logout', 'TwitterLoginController@logout')->name('logout');
 // Twitter API 認証後コールバック
 Route::get('oauth/callback', 'TwitterLoginController@authCallback')->name('auth');
 
+// ユーザマイページに関するルーティング
+Route::resource('users','UserController');
+
 // ログイン後提出フォーム
 Route::get('/submit', 'UploadController@index')->name('submit');
 
@@ -36,5 +39,5 @@ Route::post('/complete', 'SubmissionController@submit')->name('complete');
 
 ////動作確認用
 //Route::get('/dummy', function () {
-//    return view('invalid');
+//    return view('user.mypage');
 //});

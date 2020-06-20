@@ -21,7 +21,7 @@
 
 <body>
     <nav class="navbar fixed-top navbar-dark bg-dark">
-        <a class="navbar-brand">{{config('utils.app_name')}}</a>
+        <a class="navbar-brand" href="{{route('index')}}">{{config('utils.app_name')}}</a>
         @auth
             <ul class="nav">
                 <li class="nav-item">
@@ -33,8 +33,7 @@
                         {{ Auth::user()->twitter_name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-{{--                    todo: hrefをマイページにつなげる--}}
-                        <a class="dropdown-item" href="#">マイページトップ</a>
+                        <a class="dropdown-item" href="{{route('users.index')}}">マイページトップ</a>
                         <a class="dropdown-item" href="{{route('logout')}}">ログアウト</a>
                     </div>
                 </li>
