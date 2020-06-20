@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// トップページ
 Route::get('/', function () {
     return view('index');
 })->name('index');
@@ -32,3 +33,8 @@ Route::patch('/confirm', 'UploadController@confirm')->name('confirm');
 
 // 提出実行
 Route::post('/complete', 'SubmissionController@submit')->name('complete');
+
+////動作確認用
+//Route::get('/dummy', function () {
+//    return view('invalid');
+//});

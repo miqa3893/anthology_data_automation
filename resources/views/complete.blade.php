@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
+@extends('layout')
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-
-        <title>{{env('APP_NAME')}}</title>
-    </head>
-
-    <body>
-        <nav class="navbar fixed-top navbar-dark bg-dark">
-            <span class="navbar-text">{{env('APP_NAME')}}</span>
-        </nav>
-
+@section('contents')
         <nav aria-label="パンくずリスト">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">提出データの入力</li>
@@ -44,7 +21,13 @@
                 </div>
                 <div class="col-2"></div>
             </div>
-        </div>
 
-    </body>
-</html>
+            <div class="row mt-4">
+                <div class="col-2"></div>
+                <div class="col-8 text-center justify-content-center">
+                    <a href="{{route('logout')}}" class="btn btn-primary" role="button">ログアウト</a>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+@endsection
