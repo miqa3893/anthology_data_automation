@@ -11,9 +11,9 @@
 
     <div class="container">
         <div class="row  justify-content-center">
-            <div class="col-10">
+            <div class="col-xl-8">
                 <div class="card-deck">
-                    <a class="card mb-5" style="width: 30rem;" href="{{route('submit')}}">
+                    <a class="card mb-5" href="{{route('submit')}}">
                         <div class="card-header">
                             作品提出
                         </div>
@@ -21,7 +21,7 @@
                             合同誌に掲載する「作品」を提出できます。
                         </div>
                     </a>
-                    <a class="card mb-5" style="width: 30rem;">
+                    <a class="card mb-5">
                         <div class="card-header">
                             提出データ確認・修正（建設中）
                         </div>

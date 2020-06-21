@@ -9,8 +9,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-2"></div>
-                    <div class="col-8">
+                <div class="col-xl-2"></div>
+                    <div class="col-xl-8">
                         <p class="lead">提出する作品の情報を入力してください。</p>
                         <br>
                         <form action="{{route('confirm')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -143,7 +143,7 @@
                             </div>
                         </form>
                     </div>
-                <div class="col-2"></div>
+                <div class="col-xl-2"></div>
             </div>
         </div>
 
