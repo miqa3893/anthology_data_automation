@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\WorksUploadRequest;
+use App\Work;
 use Auth;
 use App\Util\DataConvertUtil;
 
@@ -11,15 +12,13 @@ class UploadController extends Controller
 
     // GET
     public function index(){
-        //ログインしていなかったらindexにリダイレクト
-        if(Auth::check()){
+        if(Auth::check() && !$this->existsWork(Auth::user())){
             return view('submit');
         }else{
-            return redirect()->route('index');
+            return view('user.badrequest');
         }
     }
 
-    // PATCH
     public function confirm(WorksUploadRequest $request){
         if(!Auth::check()){
             return redirect()->route('index');
@@ -63,4 +62,16 @@ class UploadController extends Controller
         }
         return $sum;
     }
+
+    private function existsWork($twitterUser){
+        $twitterId = $twitterUser->twitter_id;
+        $works = Work::where('twitter_id','=',$twitterId);
+
+        if($works->count() != 0){
+            return true;
+        }
+
+        return false;
+    }
+
 }

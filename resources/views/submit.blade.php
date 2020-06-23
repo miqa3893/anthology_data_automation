@@ -15,7 +15,6 @@
                         <br>
                         <form action="{{route('confirm')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                             @csrf
-                            {{ method_field('patch') }}
                             <div class="form-group">
                                 <label for="text">作品タイトル</label>
                                 <input type="text" name="title" class="form-control @if($errors->has('title')) is-invalid @endif" placeholder="作品のタイトル（64文字以内）" value="{{old('title')}}" aria-describedby="error-message-title">

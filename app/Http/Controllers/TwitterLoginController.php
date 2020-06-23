@@ -47,17 +47,6 @@ class TwitterLoginController extends Controller
         return null;
     }
 
-//    private function existsWork($twitterUser){
-//        $twitterId = $twitterUser->twitter_id;
-//        $works = Work::where('twitter_id','=',$twitterId);
-//
-//        if($works->count() != 0){
-//            return true;
-//        }
-//
-//        return false;
-//    }
-
     /**
      * システムからログアウトします
      * @return \Illuminate\Http\RedirectResponse

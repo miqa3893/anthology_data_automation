@@ -21,9 +21,9 @@
                             合同誌に掲載する「作品」を提出できます。
                         </div>
                     </a>
-                    <a class="card mb-5">
+                    <a class="card mb-5" href="{{route('users.show',['user'=>Auth::user()->twitter_id])}}">
                         <div class="card-header">
-                            提出データ確認・修正（建設中）
+                            提出データ確認・修正
                         </div>
                         <div class="card-body">
                             データを提出している方はここから修正できます。<br>

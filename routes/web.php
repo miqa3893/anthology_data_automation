@@ -28,16 +28,16 @@ Route::get('oauth/callback', 'TwitterLoginController@authCallback')->name('auth'
 // ユーザマイページに関するルーティング
 Route::resource('users','UserController');
 
-// ログイン後提出フォーム
+// 提出フォーム
 Route::get('/submit', 'UploadController@index')->name('submit');
 
 // 提出データ確認
-Route::patch('/confirm', 'UploadController@confirm')->name('confirm');
+Route::post('/confirm', 'UploadController@confirm')->name('confirm');
 
 // 提出実行
 Route::post('/complete', 'SubmissionController@submit')->name('complete');
 
-////動作確認用
-//Route::get('/dummy', function () {
-//    return view('user.mypage');
-//});
+//動作確認用
+Route::get('/dummy', function () {
+    return view('user.view');
+});
