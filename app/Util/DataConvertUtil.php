@@ -4,6 +4,8 @@
 namespace App\Util;
 
 
+use App\Work;
+
 class DataConvertUtil
 {
     /**
@@ -119,5 +121,21 @@ class DataConvertUtil
         }
 
         return $str;
+    }
+
+    /**
+     * 作品が提出されているかチェックし、提出されていた場合はTrueを返します。
+     * @param $twitterUser
+     * @return bool
+     */
+    public static function existsWork($twitterUser){
+        $twitterId = $twitterUser->twitter_id;
+        $works = Work::where('twitter_id','=',$twitterId);
+
+        if($works->count() != 0){
+            return true;
+        }
+
+        return false;
     }
 }
