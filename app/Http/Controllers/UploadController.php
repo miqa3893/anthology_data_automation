@@ -12,10 +12,10 @@ class UploadController extends Controller
 
     // GET
     public function index(){
-        if(Auth::check() && !$this->existsWork(Auth::user())){
+        if(Auth::check() && !DataConvertUtil::existsWork(Auth::user())){
             return view('submit');
         }else{
-            return view('user.badrequest');
+            return view('user.badrequest')->with('msg',"すでにデータが提出されているようです。。。<br>データの修正等は「提出データ確認・修正」からお願いします。");
         }
     }
 
@@ -62,16 +62,4 @@ class UploadController extends Controller
         }
         return $sum;
     }
-
-    private function existsWork($twitterUser){
-        $twitterId = $twitterUser->twitter_id;
-        $works = Work::where('twitter_id','=',$twitterId);
-
-        if($works->count() != 0){
-            return true;
-        }
-
-        return false;
-    }
-
 }

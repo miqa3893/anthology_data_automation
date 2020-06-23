@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8 text-center justify-content-center">
-                    <p id="lead_index" class="lead">すでにデータが提出されているようです。。。<br>データの修正等は<a href="{{route('users.show',['user'=> Auth::user()->twitter_id])}}">「提出データ確認・修正」</a>からお願いします。</p>
+                    <p id="lead_index" class="lead">{{$msg}}</p>
                     <img src="{{asset('sorry_miku.png')}}" alt="sorry_miku.png">
                 </div>
                 <div class="col-2"></div>

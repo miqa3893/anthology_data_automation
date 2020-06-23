@@ -6,6 +6,7 @@ use App\Graffito;
 use App\Status;
 use App\Util\DataConvertUtil;
 use App\Work;
+use Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -49,6 +50,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        if(!DataConvertUtil::existsWork(Auth::user())) return view('user.badrequest')->with('msg',"まだデータが提出されていないようです。。。<br>「作品提出」からデータの提出をお願いします。");
+
         //ユーザの提出データを取得する
         $workData = Work::find($id);
         $graffitoData = Graffito::find($id);
