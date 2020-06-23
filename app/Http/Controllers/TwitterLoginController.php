@@ -30,17 +30,11 @@ class TwitterLoginController extends Controller
             return view('invalid')->with('msg',"ログインに失敗しました。合同誌の参加者ではないか、参加表明時からTwitterIDが変更されている可能性があります。");
         }
 
-        //すでにworksテーブルにデータがある（提出済み）のユーザは弾く
-        if($this->existsWork($authUser)){
-            return view('invalid')->with('msg',"すでにデータが提出されている可能性があります。");
-        }
-
         Auth::login($authUser,true);
 
-        $data = array('twitterName' => $authUser->twitter_name);
-
-        return redirect()->route('home',$data);
+        return redirect()->route('users.index');
     }
+
 
     public function findUser($twitterUser){
 
@@ -54,25 +48,14 @@ class TwitterLoginController extends Controller
     }
 
     /**
-     * ユーザの作品がすでに提出済みかどうかを調べます
-     * @param User $twitterUser
-     * @return bool
+     * システムからログアウトします
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function existsWork($twitterUser){
-        $twitterId = $twitterUser->twitter_id;
-        $works = Work::where('twitter_id','=',$twitterId);
-
-        if($works->count() != 0){
-            return true;
-        }
-
-        return false;
-    }
-
     public function logout(){
         Auth::logout();
         return redirect()->route('index');
     }
+
 
     public function __construct(){
         $this->middleware('guest')->except('logout');

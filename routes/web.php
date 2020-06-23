@@ -13,21 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// トップページ
 Route::get('/', function () {
     return view('index');
 })->name('index');
 
-// Twitter API 認証
+// ログイン・ログアウト（Twitter API 認証）
 Route::get('oauth/login', 'TwitterLoginController@getAuth')->name('login');
+Route::get('logout', 'TwitterLoginController@logout')->name('logout');
 
 // Twitter API 認証後コールバック
 Route::get('oauth/callback', 'TwitterLoginController@authCallback')->name('auth');
 
-// ログイン後提出フォーム
-Route::get('/home', 'UploadController@input')->name('home');
+// ユーザマイページに関するルーティング
+Route::resource('users','UserController');
+
+// 提出フォーム
+Route::get('/submit', 'UploadController@index')->name('submit');
 
 // 提出データ確認
-Route::patch('/confirm', 'UploadController@confirm')->name('confirm');
+Route::post('/confirm', 'UploadController@confirm')->name('confirm');
 
 // 提出実行
 Route::post('/complete', 'SubmissionController@submit')->name('complete');
+
+//動作確認用
+Route::get('/dummy', function () {
+    return view('user.view');
+});

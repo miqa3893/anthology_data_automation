@@ -6,7 +6,11 @@ return [
      */
     'project_name' => env('PROJECT_NAME',"合同誌企画"),
 
+    'app_name' => env('APP_NAME',"合同誌あっぷろーだ"),
+
     'iftttUri' => env('IFTTT_API_URL',"https://maker.ifttt.com/trigger/new_data_posted/with/key/gOPzXgSTLAnmAuByGoWOoTqEg7FeFyC6J9dMskBUu-T"),
+
+    'app_version' => env('APP_VERSION','1.0.0'),
 
     /**
      * S3に保存するフォルダ名

@@ -12,6 +12,7 @@ class Work extends Model
         'twitter_id',
         'work_no',
         'work_path',
+        'work_name',
         'work_title',
         'comment',
         'character_code',
