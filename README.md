@@ -55,5 +55,6 @@ Sewing Future（ソーイング・フューチャー）[(@miqa3983)](https://twi
 
 
 ## ライセンス
-Laravel 7.x 系をオープンソースライセンスによって利用しています。 [MIT license](https://opensource.org/licenses/MIT).<br>
+- Laravel 7.x 系をオープンソースライセンスによって利用しています。 [MIT license](https://opensource.org/licenses/MIT).<br>
 本システムは、誰でもカスタマイズして自由に利用することができます。
+- 本システムに使用している「初音ミク」及び関連の創作物は、各クリエイター並びに、ピアプロ・キャラクター・ライセンス（PCL）に則って利用しています。なお、本システムは非営利目的で運用する、同人サークルが運用するシステムです。
