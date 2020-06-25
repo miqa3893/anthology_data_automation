@@ -32,9 +32,9 @@
         <div class="col-4 text-center justify-content-center">
             <a class="btn btn-outline-info btn-lg" href="{{route('users.index')}}">戻る</a>
         </div>
-        <div class="col-4 text-center justify-content-center">
-            <a class="btn btn-primary btn-lg" href="{{route('users.edit',['user'=>Auth::user()->twitter_id])}}">修正する</a>
-        </div>
+{{--        <div class="col-4 text-center justify-content-center">--}}
+{{--            <a class="btn btn-primary btn-lg" href="{{route('users.edit',['user'=>Auth::user()->twitter_id])}}">修正する</a>--}}
+{{--        </div>--}}
         <div class="col-2"></div>
     </div>
 </div>
