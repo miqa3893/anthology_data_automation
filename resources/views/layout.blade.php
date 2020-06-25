@@ -16,7 +16,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
-        <title>{{env('APP_NAME')}}</title>
+        <title>{{config('utils.app_name')}}</title>
 </head>
 
 <body>
