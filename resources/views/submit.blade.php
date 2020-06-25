@@ -7,11 +7,11 @@
             </ol>
         </nav>
 
-        <div class="container">
+        <div class="container mb-3">
             <div class="row">
                 <div class="col-xl-2"></div>
-                    <div class="col-xl-8">
-                        <p class="lead">提出する作品の情報を入力してください。</p>
+                <div class="col-xl-8">
+                        <p class="lead text-center">提出する作品の情報を入力してください。</p>
                         <br>
                         <form action="{{route('confirm')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                             @csrf
@@ -137,9 +137,17 @@
                                 </div>
                             </div>
 
-                            <div class="text-center mt-4 mb-5">
-                                <input type="submit" class="btn btn-primary btn-lg" value="送信内容の確認">
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-4 text-center justify-content-center mb-5">
+                                    <a class="btn btn-outline-info btn-lg" href="{{route('users.index')}}">戻る</a>
+                                </div>
+                                <div class="col-4 text-center mb-5">
+                                    <input type="submit" class="btn btn-primary btn-lg" value="送信内容の確認">
+                                </div>
+                                <div class="col-2"></div>
                             </div>
+
                         </form>
                     </div>
                 <div class="col-xl-2"></div>

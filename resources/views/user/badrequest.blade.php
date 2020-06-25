@@ -5,8 +5,9 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-8 text-center justify-content-center">
-                    <p id="lead_index" class="lead">{{$msg}}</p>
-                    <img src="{{asset('sorry_miku.png')}}" alt="sorry_miku.png">
+                    <p id="lead_index" class="lead">{{$title}}</p>
+                    <p>{{$msg}}</p>
+                    <img src="{{asset('images/sorry_miku.png')}}" alt="sorry_miku.png">
                 </div>
                 <div class="col-2"></div>
             </div>

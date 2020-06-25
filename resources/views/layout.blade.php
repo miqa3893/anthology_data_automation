@@ -62,4 +62,12 @@
 
     @yield('contents')
 
+    <footer class="fixed-bottom text-center mt-4" style="font-size: 10px; background: #b3b7bb">
+        <p class="font-italic mt-3">このシステムは、同人サークル<a href="https://twitter.com/miqa3983"> 「Sewing Future（ソーイング・フューチャー）」</a>が開発・運営を行っています。</p>
+    </footer>
+
+{{--    <footer class="py-2 bg-light text-muted text-center text-small">--}}
+{{--        <p class="mb-1">ふったー</p>--}}
+{{--    </footer>--}}
+
 </body>

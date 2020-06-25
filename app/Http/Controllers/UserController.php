@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * ユーザページを表示します。
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
@@ -43,14 +43,14 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * ユーザの提出データを検索し、表示します。
      *
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
-        if(!DataConvertUtil::existsWork(Auth::user())) return view('user.badrequest')->with('msg',"まだデータが提出されていないようです。。。\n「作品提出」からデータの提出をお願いします。");
+        if(!DataConvertUtil::existsWork(Auth::user())) return view('user.badrequest')->with(['title'=>"まだデータが提出されていないようです。。。",'msg' => "データの提出は「作品提出」からお願いします。"]);
 
         //ユーザの提出データを取得する
         $workData = Work::find($id);
@@ -69,23 +69,23 @@ class UserController extends Controller
             'sellEnabledValue' => $status['selling_enabled'],
         );
 
-        //todo: 提出内容ビューを返却する
+        //提出内容ビューを返却する
         return view('user.view')->with('data',$inputData);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 提出データを修正します。
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        return view('submit');
     }
 
     /**
-     * Update the specified resource in storage.
+     * 提出データの修正を更新します。
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -96,14 +96,4 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
