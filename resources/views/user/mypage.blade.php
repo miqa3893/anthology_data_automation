@@ -26,8 +26,7 @@
                     </a>
                     <a class="card mb-5" href="{{route('users.show',['user'=>Auth::user()->twitter_id])}}">
                         <div class="justify-content-center">
-{{--                            <img class="card-img-top" src="{{asset('images/submit_miku.png')}}" alt="submit_miku.png">--}}
-                            <img class="card-img-top" src="https://placehold.jp/3d4070/ffffff/454x340.png?text=fix_miku.png" alt="submit_miku.png">
+                            <img class="card-img-top" src="{{asset('images/fix_miku.png')}}" alt="fix_miku.png">
                         </div>
                         <div class="card-header">
                             データ確認・修正

@@ -47,13 +47,19 @@ Updated: 2020/06/24
 
 
 ## Special Thanks
-Illustrator nomcom（のんこむ）[(@noncomcom)](https://twitter.com/noncomcom)
+Illustrator
+* nomcom（のんこむ）[(@noncomcom)](https://twitter.com/noncomcom)
+* じゃむ [(@jam3939_shaker)](https://twitter.com/jam3939_shaker)
 
 
-## Developper
+
+## Developer
 Sewing Future（ソーイング・フューチャー）[(@miqa3983)](https://twitter.com/miqa3983)
 
 
 ## ライセンス
 Laravel 7.x 系をオープンソースライセンスによって利用しています。 [MIT license](https://opensource.org/licenses/MIT).<br>
+
 本システムは、誰でもカスタマイズして自由に利用することができます。
+
+本システムで利用しているキャラクターは、ピアプロ・キャラクター・ライセンス[（PCL）]( https://piapro.jp/license/character_guideline )に則って利用しています。各キャラクターの無断転載や利用はお断り致します。
