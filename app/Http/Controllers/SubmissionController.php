@@ -100,12 +100,11 @@ class SubmissionController extends Controller
         }
 
         //IFTTTのWebhookを叩く
-        $response = Http::post(config('utils.iftttUri'),array(
+        $response = Http::post(config('utils.ifttt_new_post_uri'),array(
             'value1' => $user->twitter_id,
             'value2' => $user->twitter_name,
             'value3' => $workPath
         ));
-
 
         return view('complete');
     }
