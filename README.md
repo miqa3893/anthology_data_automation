@@ -60,8 +60,10 @@ Sewing Future（ソーイング・フューチャー）[(@miqa3983)](https://twi
 
 
 ## ライセンス
-Laravel 7.x 系をオープンソースライセンスによって利用しています。 [MIT license](https://opensource.org/licenses/MIT).<br>
+- Laravel 7.x 系をオープンソースライセンスによって利用しています。 [MIT license](https://opensource.org/licenses/MIT).<br>
 
-本システムは、誰でもカスタマイズして自由に利用することができます。
+- 本システムは、誰でもカスタマイズして自由に利用することができます。
 
-本システムで利用しているキャラクターは、ピアプロ・キャラクター・ライセンス[（PCL）]( https://piapro.jp/license/character_guideline )に則って利用しています。各キャラクターの無断転載や利用はお断り致します。
+- 本システムで利用しているキャラクターは、ピアプロ・キャラクター・ライセンス[（PCL）]( https://piapro.jp/license/character_guideline )に則って利用しています。各キャラクターの無断転載や利用はお断り致します。
+
+- 本システムは、同人サークル『Sewing Future』が非営利目的で管理・開発・運用を行っています。
