@@ -8,7 +8,11 @@ return [
 
     'app_name' => env('APP_NAME',"合同誌あっぷろーだ"),
 
-    'iftttUri' => env('IFTTT_API_URL',"https://maker.ifttt.com/trigger/new_data_posted/with/key/gOPzXgSTLAnmAuByGoWOoTqEg7FeFyC6J9dMskBUu-T"),
+    /**
+     * IFTTT関係の環境変数
+     */
+    'ifttt_new_post_uri' => "https://maker.ifttt.com/trigger/new_data_posted/with/key/gOPzXgSTLAnmAuByGoWOoTqEg7FeFyC6J9dMskBUu-T",
+    'ifttt_fix_post_uri' => "https://maker.ifttt.com/trigger/data_fixed/with/key/gOPzXgSTLAnmAuByGoWOoTqEg7FeFyC6J9dMskBUu-T",
 
     'app_version' => env('APP_VERSION','1.0.0'),
 

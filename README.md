@@ -1,8 +1,8 @@
 <h2 align="center">合同誌あっぷろーだ for Creation Our MIRAIes!</h2>
 
 <p align="center">
-ver 2.0.0β<br>
-Updated: 2020/06/24
+ver 2.1.0<br>
+Updated: 2020/07/02
 </p>
 
 ## なにこれ?
@@ -12,6 +12,12 @@ Updated: 2020/06/24
 - 参加者以外はシステムにログインできません。
 
 ## バージョンアップ履歴
+### ver 2.1.0
+- ユーザページから提出データの修正ができるようになりました。
+- ユーザページのアイコンにイラストが追加されました。
+- ファビコン（タブの左端のアレ）が表示されるようになりました。
+- 修正があった旨が管理者Slackに通知されるようになりました。
+
 ### ver 2.0.0β
 - ユーザページを作成しました。
     - 提出データが確認できるようになりました。
@@ -34,10 +40,6 @@ Updated: 2020/06/24
 
 
 ## 今後の実装予定
-- ユーザ個人ページ
-    - 投稿作品のチェック機能
-    - 投稿作品の修正機能
-    - 再投稿機能
 - 管理者ページ
     - 作品データの一覧閲覧
     - 各ユーザのデータ確認
@@ -47,14 +49,21 @@ Updated: 2020/06/24
 
 
 ## Special Thanks
-Illustrator nomcom（のんこむ）[(@noncomcom)](https://twitter.com/noncomcom)
+Illustrator
+* nomcom（のんこむ）[(@noncomcom)](https://twitter.com/noncomcom)
+* じゃむ [(@jam3939_shaker)](https://twitter.com/jam3939_shaker)
 
 
-## Developper
+
+## Developer
 Sewing Future（ソーイング・フューチャー）[(@miqa3983)](https://twitter.com/miqa3983)
 
 
 ## ライセンス
 - Laravel 7.x 系をオープンソースライセンスによって利用しています。 [MIT license](https://opensource.org/licenses/MIT).<br>
-本システムは、誰でもカスタマイズして自由に利用することができます。
-- 本システムに使用している「初音ミク」及び関連の創作物は、各クリエイター並びに、ピアプロ・キャラクター・ライセンス（PCL）に則って利用しています。なお、本システムは非営利目的で運用する、同人サークルが運用するシステムです。
+
+- 本システムは、誰でもカスタマイズして自由に利用することができます。
+
+- 本システムで利用しているキャラクターは、ピアプロ・キャラクター・ライセンス[（PCL）]( https://piapro.jp/license/character_guideline )に則って利用しています。各キャラクターの無断転載や利用はお断り致します。
+
+- 本システムは、同人サークル『Sewing Future』が非営利目的で管理・開発・運用を行っています。

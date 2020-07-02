@@ -85,6 +85,24 @@ class DataConvertUtil
     }
 
     /**
+     * キャラクターコード（合計）を配列に変換します
+     * @param int $characters
+     * @return array|string
+     */
+    public static function toArrayForCharacter(int $characters){
+        $arr = [];
+        if($characters==0){
+            return self::$integerToCharacterArray[self::ALL_CHARACTER_SUM];
+        }
+
+        foreach (self::$allCharactersArray as $item){
+            if($characters & $item) $arr[] = $item;
+        }
+
+        return $arr;
+    }
+
+    /**
      * 年度コードをキャラクター名に変換します
      * @param array $years
      * @return string
@@ -124,6 +142,24 @@ class DataConvertUtil
     }
 
     /**
+     * 年度コード（合計）を配列に変換します
+     * @param int $years
+     * @return array|string
+     */
+    public static function toArrayForYear(int $years){
+        $arr = [];
+        if($years==0){
+            return self::$integerToYearArray[self::ALL_YEAR_SUM];
+        }
+
+        foreach (self::$allYearsArray as $item){
+            if($years & $item) $arr[] = $item;
+        }
+
+        return $arr;
+    }
+
+    /**
      * 作品が提出されているかチェックし、提出されていた場合はTrueを返します。
      * @param $twitterUser
      * @return bool
@@ -137,5 +173,13 @@ class DataConvertUtil
         }
 
         return false;
+    }
+
+    public static function sumCode(array $codes){
+        $sum = 0;
+        foreach ($codes as $code){
+            $sum += $code;
+        }
+        return $sum;
     }
 }

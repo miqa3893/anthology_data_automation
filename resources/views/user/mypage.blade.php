@@ -3,7 +3,7 @@
 @section('contents')
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col mt-2 mb-2">
                 <p class="lead text-center">こんにちは、{{ Auth::user()->twitter_name }}さん！</p>
             </div>
         </div>
@@ -14,6 +14,9 @@
             <div class="col-xl-8">
                 <div class="card-deck">
                     <a class="card mb-5" href="{{route('submit')}}">
+                        <div class="justify-content-center">
+                            <img class="card-img-top" src="{{asset('images/submit_miku.png')}}" alt="submit_miku.png">
+                        </div>
                         <div class="card-header">
                             作品提出
                         </div>
@@ -22,12 +25,14 @@
                         </div>
                     </a>
                     <a class="card mb-5" href="{{route('users.show',['user'=>Auth::user()->twitter_id])}}">
+                        <div class="justify-content-center">
+                            <img class="card-img-top" src="{{asset('images/fix_miku.png')}}" alt="fix_miku.png">
+                        </div>
                         <div class="card-header">
-                            提出データ確認・修正
+                            データ確認・修正
                         </div>
                         <div class="card-body">
-                            データを提出している方はここから修正できます。<br>
-                            再投稿もこちらからどうぞ。
+                            提出データの確認や修正、再投稿ができます。
                         </div>
                     </a>
                 </div>

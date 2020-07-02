@@ -19,10 +19,6 @@ class SubmissionController extends Controller
 {
     // データ提出（DB書き込み）
     public function submit(Request $request){
-        if(!Auth::check()){
-            return redirect()->route('index');
-        }
-
         // ユーザ情報を取得
         $user = User::where('id','=',Auth::id())->first();
 
@@ -66,6 +62,7 @@ class SubmissionController extends Controller
                 'work_no' => 1,                                     //保存回数
                 'work_path' => $workPath,                           //S3の保存パス
                 'work_title' => $request->get('title'),         //タイトル
+                'work_name' => $request->get('workFileName'),   //ファイル名
                 'comment' => $request->get('comment'),          //感想
                 'character_code' => $character,                      //キャラコード
                 'year_code' => $year,                                //年コード
@@ -92,6 +89,7 @@ class SubmissionController extends Controller
                     'twitter_id' => $user->twitter_id,
                     'graffito_no' => 1,
                     'graffito_path' => $graffitoPath,
+                    'graffito_name' => $request->get('graffitoFileName'),
                 ));
 
             }catch (Exception $exception){
@@ -102,12 +100,11 @@ class SubmissionController extends Controller
         }
 
         //IFTTTのWebhookを叩く
-        $response = Http::post(config('utils.iftttUri'),array(
+        $response = Http::post(config('utils.ifttt_new_post_uri'),array(
             'value1' => $user->twitter_id,
             'value2' => $user->twitter_name,
             'value3' => $workPath
         ));
-
 
         return view('complete');
     }

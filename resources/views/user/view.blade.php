@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('contents')
-<div class="container">
+<div class="container mb-3 pb-2">
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8 text-center justify-content-center">
@@ -27,14 +27,15 @@
         <tr><td>グッズ化の可否</td><td>{{$data["sellEnabled"]}}</tr>
     </table>
 
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-2"></div>
         <div class="col-4 text-center justify-content-center">
-            <a class="btn btn-outline-info" href="{{route('users.index')}}">戻る</a>
+            <a class="btn btn-outline-info btn-lg" href="{{route('users.index')}}">戻る</a>
         </div>
         <div class="col-4 text-center justify-content-center">
-{{--            <a class="btn btn-primary" href="{{route('users.update',['user'=>Auth::user()->twitter_id])}}">修正する</a>--}}
+            <a class="btn btn-primary btn-lg" href="{{route('users.edit',['user'=>Auth::user()->twitter_id])}}">修正する</a>
         </div>
         <div class="col-2"></div>
     </div>
 </div>
+@endsection

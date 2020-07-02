@@ -15,7 +15,7 @@ class UploadController extends Controller
         if(Auth::check() && !DataConvertUtil::existsWork(Auth::user())){
             return view('submit');
         }else{
-            return view('user.badrequest')->with('msg',"すでにデータが提出されているようです。。。\nデータの修正等は「提出データ確認・修正」からお願いします。");
+            return view('user.badrequest')->with(['title'=>"すでにデータが提出されているようです。。。",'msg' => "データの修正等は「提出データ確認・修正」からお願いします。"]);
         }
     }
 
@@ -43,8 +43,8 @@ class UploadController extends Controller
             'title' => $request->get('title'),
             'comment' => $request->get('comment'),
             'characters' => DataConvertUtil::toCharacter($request->get('characters')),
-            'charactersSum' => $this->sumCode($request->get('characters')),
-            'yearsSum' => $this->sumCode($request->get('years')),
+            'charactersSum' => DataConvertUtil::sumCode($request->get('characters')),
+            'yearsSum' => DataConvertUtil::sumCode($request->get('years')),
             'years' => DataConvertUtil::toYear($request->get('years')),
             'workName' => $request->file('work')->getClientOriginalName(),
             'sellEnabled' => $request->get('sellEnabled')==1 ? "はい" : "いいえ",
@@ -53,13 +53,5 @@ class UploadController extends Controller
         );
 
         return view('confirm')->with('data',$inputData);
-    }
-
-    private function sumCode(array $codes){
-        $sum = 0;
-        foreach ($codes as $code){
-            $sum += $code;
-        }
-        return $sum;
     }
 }
