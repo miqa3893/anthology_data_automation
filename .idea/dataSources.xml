@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="anthology" uuid="65d49493-8357-4ab8-ae12-b7ef480c4e22">
+    <data-source source="LOCAL" name="【develop】合同誌あっぷろーだ【社内用】" uuid="3d6ad849-a3e4-4c2c-93a8-a40f405af3f3">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
+      <remarks>AQ社内からアクセスできるDBユーザ</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://52.198.101.210:3306/anthology</jdbc-url>
+      <jdbc-url>jdbc:mysql://sewing-future-miraies.com:3306/developdb</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="【anthology】合同誌あっぷろーだ【社内用】" uuid="c6054bd5-1ed3-4880-ba6f-b9cd4dc13b0b">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>AQ社内からアクセスできるDBユーザ</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://sewing-future-miraies.com:3306/anthology</jdbc-url>
     </data-source>
   </component>
 </project>

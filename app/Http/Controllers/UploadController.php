@@ -3,25 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\WorksUploadRequest;
+use App\Work;
 use Auth;
-use Illuminate\Http\Request;
 use App\Util\DataConvertUtil;
 
 class UploadController extends Controller
 {
 
     // GET
-    public function input(){
-
-        //ログインしていなかったらindexにリダイレクト
-        if(Auth::check()){
-            return view('home');
+    public function index(){
+        if(Auth::check() && !DataConvertUtil::existsWork(Auth::user())){
+            return view('submit');
         }else{
-            return redirect()->route('index');
+            return view('user.badrequest')->with(['title'=>"すでにデータが提出されているようです。。。",'msg' => "データの修正等は「提出データ確認・修正」からお願いします。"]);
         }
     }
 
-    // PATCH
     public function confirm(WorksUploadRequest $request){
         if(!Auth::check()){
             return redirect()->route('index');
@@ -46,8 +43,8 @@ class UploadController extends Controller
             'title' => $request->get('title'),
             'comment' => $request->get('comment'),
             'characters' => DataConvertUtil::toCharacter($request->get('characters')),
-            'charactersSum' => $this->sumCode($request->get('characters')),
-            'yearsSum' => $this->sumCode($request->get('years')),
+            'charactersSum' => DataConvertUtil::sumCode($request->get('characters')),
+            'yearsSum' => DataConvertUtil::sumCode($request->get('years')),
             'years' => DataConvertUtil::toYear($request->get('years')),
             'workName' => $request->file('work')->getClientOriginalName(),
             'sellEnabled' => $request->get('sellEnabled')==1 ? "はい" : "いいえ",
@@ -56,13 +53,5 @@ class UploadController extends Controller
         );
 
         return view('confirm')->with('data',$inputData);
-    }
-
-    private function sumCode(array $codes){
-        $sum = 0;
-        foreach ($codes as $code){
-            $sum += $code;
-        }
-        return $sum;
     }
 }
