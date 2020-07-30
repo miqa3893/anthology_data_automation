@@ -92,7 +92,7 @@ class DataConvertUtil
     public static function toArrayForCharacter(int $characters){
         $arr = [];
         if($characters==0){
-            return self::$integerToCharacterArray[self::ALL_CHARACTER_SUM];
+            $characters = self::ALL_CHARACTER_SUM;
         }
 
         foreach (self::$allCharactersArray as $item){
@@ -149,13 +149,12 @@ class DataConvertUtil
     public static function toArrayForYear(int $years){
         $arr = [];
         if($years==0){
-            return self::$integerToYearArray[self::ALL_YEAR_SUM];
+            $years = self::ALL_YEAR_SUM;
         }
 
         foreach (self::$allYearsArray as $item){
             if($years & $item) $arr[] = $item;
         }
-
         return $arr;
     }
 

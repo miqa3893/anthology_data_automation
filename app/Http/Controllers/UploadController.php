@@ -15,7 +15,7 @@ class UploadController extends Controller
         if(Auth::check() && !DataConvertUtil::existsWork(Auth::user())){
             return view('submit');
         }else{
-            return view('user.badrequest')->with(['title'=>"すでにデータが提出されているようです。。。",'msg' => "データの修正等は「提出データ確認・修正」からお願いします。"]);
+            return view('user.sorry')->with(['title'=>"すでにデータが提出されているようです。。。",'msg' => "データの修正等は「提出データ確認・修正」からお願いします。"]);
         }
     }
 

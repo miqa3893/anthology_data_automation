@@ -57,7 +57,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        if(!DataConvertUtil::existsWork(Auth::user())) return view('user.badrequest')->with(['title'=>"まだデータが提出されていないようです。。。",'msg' => "データの提出は「作品提出」からお願いします。"]);
+        if(!DataConvertUtil::existsWork(Auth::user())) return view('user.sorry')->with(['title'=>"まだデータが提出されていないようです。。。",'msg' => "データの提出は「作品提出」からお願いします。"]);
 
         //ユーザの提出データを取得する
         $workData = Work::find($id);
@@ -99,6 +99,7 @@ class UserController extends Controller
             'years' => DataConvertUtil::toArrayForYear($workData['year_code']),
             'sellEnabled' => $status['selling_enabled'],
         );
+
         return view('user.fix')->with('defaultData',$defaultData);
     }
 
