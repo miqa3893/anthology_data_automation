@@ -59,7 +59,7 @@ Illustrator
 
 
 ## Developer
-Sewing Future（ソーイング・フューチャー）[(@miqa3983)](https://twitter.com/miqa3983)
+Sewing Future（ソーイング・フューチャー）[(@mufcomet)](https://twitter.com/mufcomet)
 
 
 ## ライセンス
